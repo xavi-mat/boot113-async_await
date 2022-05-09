@@ -29,7 +29,7 @@ const pokeImg = document.querySelector('#poke-img');
 const getRandomInt = (num) => Math.floor(Math.random() * num);
 const putSpinner = () => {
     pokeH1.innerHTML = '<h1>&#8635;</h1>';
-    pokeImg.src = './assets/img/empty.png'
+    pokeImg.src = './assets/img/spinning-loading.gif'
 }
 const putName = (name) => pokeH1.innerHTML = '<h1>'+name+'</h1>';
 const putImg = (url) => pokeImg.src = url;
