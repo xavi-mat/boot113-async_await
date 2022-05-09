@@ -13,7 +13,7 @@ const MAX_POKS = 1126;
 ////////////////////////////////////////////////////////////////////////////////
 // DOM
 const pokeBall = document.querySelector('#poke-ball');
-const pokeH1 = document.querySelector('#poke-h1');
+const pokeH3 = document.querySelector('#poke-h3');
 const pokeImg = document.querySelector('#poke-img');
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -28,10 +28,10 @@ const pokeImg = document.querySelector('#poke-img');
 // Utils
 const getRandomInt = (num) => Math.floor(Math.random() * num);
 const putSpinner = () => {
-    pokeH1.innerHTML = '<h1>&#8635;</h1>';
+    pokeH3.innerHTML = '<h3>&#8635;</h3>';
     pokeImg.src = './assets/img/spinning-loading.gif'
 }
-const putName = (name) => pokeH1.innerHTML = '<h1>'+name+'</h1>';
+const putName = (name) => pokeH3.innerHTML = '<h3>'+name+'</h3>';
 const putImg = (url) => pokeImg.src = url;
 
 ////////////////////////////////////////////////////////////////////////////////

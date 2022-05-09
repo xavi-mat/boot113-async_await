@@ -1,4 +1,9 @@
 .container {
     display: flex;
     gap: 2rem;
+    justify-content: space-around;
+}
+
+.pokeball:hover {
+    background-color: lightgrey;
 }
