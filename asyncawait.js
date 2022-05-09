@@ -15,6 +15,7 @@ const MAX_POKS = 1126;
 const pokeBall = document.querySelector('#poke-ball');
 const pokeH3 = document.querySelector('#poke-h3');
 const pokeImg = document.querySelector('#poke-img');
+const pokeImgSpin = document.querySelector('#poke-img-spin');
 
 ////////////////////////////////////////////////////////////////////////////////
 // Globals
@@ -28,11 +29,27 @@ const pokeImg = document.querySelector('#poke-img');
 // Utils
 const getRandomInt = (num) => Math.floor(Math.random() * num);
 const putSpinner = () => {
-    pokeH3.innerHTML = '<h3>&#8635;</h3>';
-    pokeImg.src = './assets/img/spinning-loading.gif'
+    pokeH3.innerHTML = `<div class="spinner-border text-primary"></div>
+    <div class="spinner-border text-secondary"></div>
+    <div class="spinner-border text-success"></div>
+    <div class="spinner-border text-danger"></div>
+    <div class="spinner-border text-warning"></div>
+    <div class="spinner-border text-info"></div>
+    <div class="spinner-border text-dark"></div>`;
+    pokeImg.src = '';
+    pokeImgSpin.innerHTML = `<div class="spinner-border text-primary"></div>
+    <div class="spinner-border text-secondary"></div>
+    <div class="spinner-border text-success"></div>
+    <div class="spinner-border text-danger"></div>
+    <div class="spinner-border text-warning"></div>
+    <div class="spinner-border text-info"></div>
+    <div class="spinner-border text-dark"></div>`;
 }
-const putName = (name) => pokeH3.innerHTML = '<h3>'+name+'</h3>';
-const putImg = (url) => pokeImg.src = url;
+const putName = (name) => pokeH3.innerHTML = name;
+const putImg = (url) => {
+    pokeImgSpin.innerHTML = '';
+    pokeImg.src = url;
+};
 
 ////////////////////////////////////////////////////////////////////////////////
 // Functions
@@ -53,7 +70,6 @@ const catchEmAll = async () => {
     try {
         const res = await axios(APIURL + randId);
         const pokeData = res.data.results[0];
-        // console.log(pokeData);
         putName(pokeData.name);
         getImg(pokeData);
 
