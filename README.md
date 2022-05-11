@@ -18,19 +18,6 @@ A second fetch will gety all the info of that pokémon and will use only the
 `sprites.front_default` property to put it in the `src` attribute of an `img`
 element.
 
-```js
-const getImg = async (pokeData) => {
-    try {
-        const poke = await axios(pokeData.url);
-        const pokeImgUrl = poke.data.sprites.front_default;
-        putImg(pokeImgUrl);
-
-    } catch (error) {
-        console.error(error);
-    }
-}
-```
-
 ### Technologies used
 * HTML5
 * CSS (Bootstrap)
